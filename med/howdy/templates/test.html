@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Assist</title>
+    <style>
+        @charset "UTF-8";
+
+
+
+/*******************choose***********************/
+/* Hide original appearance */
+.choose-file {
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    z-index: -1;
+    position: absolute;
+    width: 0.1px;
+}
+
+/* Style both input field and label */
+.choose-file+.upload-file {
+    background-color: #e2f8f9;
+    box-sizing: content-box;
+    width: 3000px;
+  height: 100px;
+  padding: 50px;
+    color: #5A5541;
+    display: block;
+    font-family: Sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 8.2rem 1rem 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    border: 2px dashed #27BEC5;
+    border-radius: 16px;
+    text-transform: initial;
+    cursor: pointer;
+}
+
+.choose-file:focus+.upload-file,
+.choose-file+.upload-file:hover {
+    background-color: #d2f3f5;
+}
+
+
+label.upload-file::before {
+    content: "Choose a image File or capture it using camera";
+    text-decoration: underline;
+    color: #27BEC5;
+    font-size: 16px;
+}
+
+/* This appears after a file is chosen. */
+.choose-file:valid+.upload-file::before {
+    content: attr(data-text);
+    color: #5A5541;
+    font-size: 16px;
+}
+
+.upload {
+    position: relative;
+    width: 347px;
+    margin: 30px auto;
+    align-content: center;
+}
+
+.upload img {
+    width: 55px;
+    position: absolute;
+    top: 36px;
+    left: 144px;
+    pointer-events: none;
+    align-content: center;
+}
+
+.btn.btn-up {
+    color: #fff;
+    background-color: #27BEC5;
+    border-color: #27BEC5;
+    min-width: 72px;
+    font-size: 16px;
+    margin: 20px auto 0px;
+    display: table;
+    text-transform: initial;
+}
+    </style>
+</head>
+<body>
+    <br>
+    <br>
+    <h2>Bring your tablet in front of camera</h2>
+    <br>
+    <form  action="http://192.168.43.147:8000/"  method="post"  enctype="multipart/form-data">
+    <div class="upload">
+        <img src="https://www.thinkpower.com.tw/demo/tsmp-art/images/icon_cloud@2x.png" alt="">
+    
+    <input class="choose-file" type="file" id="choose-file"  name="text" required>
+    
+    <label for="choose-file" class="upload-file" data-text="filename" >
+        <div class="btn btn-up" type="button">Deploy</div>
+    </label>
+</div></form>
+    <script type="text/javascript">
+        window.onload=function(){
+            var auto = setTimeout(function(){ autoRefresh(); }, 100);
+    
+            function submitform(){
+              document.forms["myForm"].submit();
+            }
+    
+            function autoRefresh(){
+               clearTimeout(auto);
+               auto = setTimeout(function(){ submitform(); autoRefresh(); }, 1000);
+            }
+        }
+    </script>
+</body>
+</html>

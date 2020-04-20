@@ -1,0 +1,4 @@
+fifty
+hundred
+ten
+twenty

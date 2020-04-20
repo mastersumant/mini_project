@@ -1,1 +1,1 @@
-#Mini project Codes
+#Repository for our Mini project
