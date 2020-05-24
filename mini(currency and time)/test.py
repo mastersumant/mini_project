@@ -106,8 +106,6 @@ def main():
                         playsound('20.mp3')
                     elif(strClassification=='ten'):
                         playsound('10.mp3')
-                    elif(strClassification=='fivehundred'):
-                        playsound('500.mp3')
                     
                     break
             
