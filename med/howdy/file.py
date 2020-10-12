@@ -1,11 +1,7 @@
 def main():
   import pyttsx3 
-  import numpy as np
   import pytesseract
-  from gtts import gTTS
   import cv2
-  import ssl
-  import urllib
   pytesseract.pytesseract.tesseract_cmd ='C:/Program Files/Tesseract-OCR/tesseract.exe'
   ctx = ssl.create_default_context()
   ctx.check_hostname = False
